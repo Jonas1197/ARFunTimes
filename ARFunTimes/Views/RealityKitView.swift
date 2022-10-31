@@ -135,53 +135,61 @@ struct RealityKitView: UIViewRepresentable {
                   let focusEntity = self.focusEntity,
                   let config      = self.customConfiguration else { return }
             
-            //MARK: Create a new anchor to ad  content to
+            //MARK: Create a new anchor to add content to
             let anchor = AnchorEntity()
             view.scene.anchors.append(anchor)
             
             
-            print("\n~~> Entity type: \(config.entityType.rawValue)")
-//            let entity = ModelEntity(mesh: .generateBox(size: 0.5))
             
+            
+            
+            //MARK: Load plane
+            // So that the models spawn on it and won't fall off immediatelly.
+            if planeEntity == nil {
+                let planeMesh = MeshResource.generatePlane(width: 100, depth: 1)
+                let material  = SimpleMaterial(color: .init(white: 1.0, alpha: 0.0), isMetallic: false)
+                
+                planeEntity             = ModelEntity(mesh: planeMesh, materials: [material])
+                planeEntity.position    = focusEntity.position
+                planeEntity.physicsBody = PhysicsBodyComponent(massProperties: .default, material: nil, mode: .static)
+                planeEntity.collision   = CollisionComponent(shapes: [.generateBox(width: 2, height: 0.001, depth: 100)])
+                let position: SIMD3<Float> = [focusEntity.position.x, focusEntity.position.y - 0.1, focusEntity.position.z]
+                planeEntity.position    = position
+                
+                anchor.addChild(planeEntity)
+            }
+           
+            
+            //MARK: Load the entity from the .usdz assets
             guard let entity = try? ModelEntity.loadModel(named: config.entityType.rawValue) else {
                 debugPrint("\n~~> Failed to add entity, invalid asset name...")
                 return
             }
             
+            
+            //MARK: Scaling and positioning
             entity.scale    = config.entityScale
             entity.position = focusEntity.position
-//
+
+            
+            //MARK: Add physics to the object
             let size     = entity.visualBounds(relativeTo: entity).extents
             let boxShape = ShapeResource.generateBox(size: size)
-
             entity.generateCollisionShapes(recursive: true)
             let physics = PhysicsBodyComponent(massProperties: .init(shape: boxShape, mass: 5),
                                                material:       .default,
                                                mode:           .dynamic)
             entity.components.set(physics)
             
+            
+            //MARK: Add object to the world
             anchor.addChild(entity)
             self.entities.append(entity)
-            
-            
-            
-            guard planeEntity == nil else { return }
-            let planeMesh = MeshResource.generatePlane(width: 100, depth: 1)
-            let material  = SimpleMaterial(color: .init(white: 1.0, alpha: 0.0), isMetallic: false)
-            
-            planeEntity             = ModelEntity(mesh: planeMesh, materials: [material])
-            planeEntity.position    = focusEntity.position
-            planeEntity.physicsBody = PhysicsBodyComponent(massProperties: .default, material: nil, mode: .static)
-            planeEntity.collision   = CollisionComponent(shapes: [.generateBox(width: 2, height: 0.001, depth: 2)])
-            let position: SIMD3<Float> = [focusEntity.position.x, focusEntity.position.y - 0.1, focusEntity.position.z]
-            planeEntity.position    = position
-            
-            anchor.addChild(planeEntity)
         }
         
+        /// It does what it says in the title.
         func fusRoDahEverything() {
             for entity in self.entities {
-                
                 entity.addForce([0, 4, 0], relativeTo: nil)
                 entity.addTorque([Float.random(in: 0 ... 1), Float.random(in: 0 ... 1), Float.random(in: 0 ... 1)], relativeTo: nil)
             }
