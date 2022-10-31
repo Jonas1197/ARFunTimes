@@ -1,0 +1,407 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		75CD4957290FC531000AD7F7 /* ARFunTimesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD4956290FC531000AD7F7 /* ARFunTimesApp.swift */; };
+		75CD4959290FC531000AD7F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD4958290FC531000AD7F7 /* ContentView.swift */; };
+		75CD495B290FC532000AD7F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75CD495A290FC532000AD7F7 /* Assets.xcassets */; };
+		75CD495E290FC532000AD7F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75CD495D290FC532000AD7F7 /* Preview Assets.xcassets */; };
+		75CD4966290FC5DA000AD7F7 /* RealityKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD4965290FC5DA000AD7F7 /* RealityKitView.swift */; };
+		75CD4969290FC973000AD7F7 /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 75CD4968290FC973000AD7F7 /* FocusEntity */; };
+		75CD496C290FD88C000AD7F7 /* Dice.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 75CD496B290FD88C000AD7F7 /* Dice.usdz */; };
+		75CD496E290FDC57000AD7F7 /* BeerBottle.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 75CD496D290FDC57000AD7F7 /* BeerBottle.usdz */; };
+		75CD4970290FFEF0000AD7F7 /* BeerBottle2.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 75CD496F290FFEF0000AD7F7 /* BeerBottle2.usdz */; };
+		75CD497229100078000AD7F7 /* ColaTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 75CD497129100078000AD7F7 /* ColaTexture.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		75CD4953290FC531000AD7F7 /* ARFunTimes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARFunTimes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		75CD4956290FC531000AD7F7 /* ARFunTimesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARFunTimesApp.swift; sourceTree = "<group>"; };
+		75CD4958290FC531000AD7F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		75CD495A290FC532000AD7F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		75CD495D290FC532000AD7F7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		75CD4965290FC5DA000AD7F7 /* RealityKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityKitView.swift; sourceTree = "<group>"; };
+		75CD496B290FD88C000AD7F7 /* Dice.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Dice.usdz; sourceTree = "<group>"; };
+		75CD496D290FDC57000AD7F7 /* BeerBottle.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = BeerBottle.usdz; sourceTree = "<group>"; };
+		75CD496F290FFEF0000AD7F7 /* BeerBottle2.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = BeerBottle2.usdz; sourceTree = "<group>"; };
+		75CD497129100078000AD7F7 /* ColaTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ColaTexture.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		75CD4950290FC531000AD7F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75CD4969290FC973000AD7F7 /* FocusEntity in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		75CD494A290FC531000AD7F7 = {
+			isa = PBXGroup;
+			children = (
+				75CD4955290FC531000AD7F7 /* ARFunTimes */,
+				75CD4954290FC531000AD7F7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		75CD4954290FC531000AD7F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				75CD4953290FC531000AD7F7 /* ARFunTimes.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		75CD4955290FC531000AD7F7 /* ARFunTimes */ = {
+			isa = PBXGroup;
+			children = (
+				75CD496A290FD87C000AD7F7 /* Assets */,
+				75CD4964290FC590000AD7F7 /* Views */,
+				75CD4956290FC531000AD7F7 /* ARFunTimesApp.swift */,
+				75CD4958290FC531000AD7F7 /* ContentView.swift */,
+				75CD495A290FC532000AD7F7 /* Assets.xcassets */,
+				75CD495C290FC532000AD7F7 /* Preview Content */,
+			);
+			path = ARFunTimes;
+			sourceTree = "<group>";
+		};
+		75CD495C290FC532000AD7F7 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				75CD495D290FC532000AD7F7 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		75CD4964290FC590000AD7F7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				75CD4965290FC5DA000AD7F7 /* RealityKitView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		75CD496A290FD87C000AD7F7 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				75CD497129100078000AD7F7 /* ColaTexture.png */,
+				75CD496F290FFEF0000AD7F7 /* BeerBottle2.usdz */,
+				75CD496D290FDC57000AD7F7 /* BeerBottle.usdz */,
+				75CD496B290FD88C000AD7F7 /* Dice.usdz */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		75CD4952290FC531000AD7F7 /* ARFunTimes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75CD4961290FC532000AD7F7 /* Build configuration list for PBXNativeTarget "ARFunTimes" */;
+			buildPhases = (
+				75CD494F290FC531000AD7F7 /* Sources */,
+				75CD4950290FC531000AD7F7 /* Frameworks */,
+				75CD4951290FC531000AD7F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ARFunTimes;
+			packageProductDependencies = (
+				75CD4968290FC973000AD7F7 /* FocusEntity */,
+			);
+			productName = ARFunTimes;
+			productReference = 75CD4953290FC531000AD7F7 /* ARFunTimes.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		75CD494B290FC531000AD7F7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					75CD4952290FC531000AD7F7 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 75CD494E290FC531000AD7F7 /* Build configuration list for PBXProject "ARFunTimes" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 75CD494A290FC531000AD7F7;
+			packageReferences = (
+				75CD4967290FC973000AD7F7 /* XCRemoteSwiftPackageReference "FocusEntity" */,
+			);
+			productRefGroup = 75CD4954290FC531000AD7F7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				75CD4952290FC531000AD7F7 /* ARFunTimes */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		75CD4951290FC531000AD7F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75CD495E290FC532000AD7F7 /* Preview Assets.xcassets in Resources */,
+				75CD4970290FFEF0000AD7F7 /* BeerBottle2.usdz in Resources */,
+				75CD495B290FC532000AD7F7 /* Assets.xcassets in Resources */,
+				75CD496C290FD88C000AD7F7 /* Dice.usdz in Resources */,
+				75CD497229100078000AD7F7 /* ColaTexture.png in Resources */,
+				75CD496E290FDC57000AD7F7 /* BeerBottle.usdz in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		75CD494F290FC531000AD7F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75CD4959290FC531000AD7F7 /* ContentView.swift in Sources */,
+				75CD4957290FC531000AD7F7 /* ARFunTimesApp.swift in Sources */,
+				75CD4966290FC5DA000AD7F7 /* RealityKitView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		75CD495F290FC532000AD7F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		75CD4960290FC532000AD7F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		75CD4962290FC532000AD7F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ARFunTimes/Preview Content\"";
+				DEVELOPMENT_TEAM = 678L74QEPX;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need that!! GIVE ME!";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jonasg.ARFunTimes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		75CD4963290FC532000AD7F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ARFunTimes/Preview Content\"";
+				DEVELOPMENT_TEAM = 678L74QEPX;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need that!! GIVE ME!";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jonasg.ARFunTimes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		75CD494E290FC531000AD7F7 /* Build configuration list for PBXProject "ARFunTimes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75CD495F290FC532000AD7F7 /* Debug */,
+				75CD4960290FC532000AD7F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		75CD4961290FC532000AD7F7 /* Build configuration list for PBXNativeTarget "ARFunTimes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75CD4962290FC532000AD7F7 /* Debug */,
+				75CD4963290FC532000AD7F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		75CD4967290FC973000AD7F7 /* XCRemoteSwiftPackageReference "FocusEntity" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maxxfrazer/FocusEntity";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		75CD4968290FC973000AD7F7 /* FocusEntity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 75CD4967290FC973000AD7F7 /* XCRemoteSwiftPackageReference "FocusEntity" */;
+			productName = FocusEntity;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 75CD494B290FC531000AD7F7 /* Project object */;
+}
