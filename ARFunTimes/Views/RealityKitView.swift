@@ -109,7 +109,7 @@ struct RealityKitView: UIViewRepresentable {
     
     
     //MARK: - Coordinator
-    class Coordinator: NSObject, ARSessionDelegate {
+    final class Coordinator: NSObject, ARSessionDelegate {
         enum EntityType: String {
             case dice       = "Dice"
             case beerBottle = "BeerBottle"
@@ -117,9 +117,9 @@ struct RealityKitView: UIViewRepresentable {
         
         weak var view: ARView?
         var customConfiguration: CustomARConfiguration?
-        var planeEntity: ModelEntity!
-        var focusEntity: FocusEntity?
-        private var entities: [ModelEntity] = []
+        var planeEntity:         ModelEntity!
+        var focusEntity:         FocusEntity?
+        private var entities:    [ModelEntity] = []
         
         func session(_ session: ARSession, didAdd anchors: [ARAnchor]) {
             guard let view = self.view else { return }
@@ -141,8 +141,6 @@ struct RealityKitView: UIViewRepresentable {
             
             
             
-            
-            
             //MARK: Load plane
             // So that the models spawn on it and won't fall off immediatelly.
             if planeEntity == nil {
@@ -153,8 +151,9 @@ struct RealityKitView: UIViewRepresentable {
                 planeEntity.position    = focusEntity.position
                 planeEntity.physicsBody = PhysicsBodyComponent(massProperties: .default, material: nil, mode: .static)
                 planeEntity.collision   = CollisionComponent(shapes: [.generateBox(width: 2, height: 0.001, depth: 100)])
+                
                 let position: SIMD3<Float> = [focusEntity.position.x, focusEntity.position.y - 0.1, focusEntity.position.z]
-                planeEntity.position    = position
+                planeEntity.position       = position
                 
                 anchor.addChild(planeEntity)
             }
@@ -191,7 +190,10 @@ struct RealityKitView: UIViewRepresentable {
         func fusRoDahEverything() {
             for entity in self.entities {
                 entity.addForce([0, 4, 0], relativeTo: nil)
-                entity.addTorque([Float.random(in: 0 ... 1), Float.random(in: 0 ... 1), Float.random(in: 0 ... 1)], relativeTo: nil)
+                entity.addTorque([Float.random(in: 0 ... 1),
+                                  Float.random(in: 0 ... 1),
+                                  Float.random(in: 0 ... 1)],
+                                 relativeTo: nil)
             }
         }
     }

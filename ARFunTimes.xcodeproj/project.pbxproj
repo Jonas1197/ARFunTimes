@@ -17,6 +17,7 @@
 		75CD496E290FDC57000AD7F7 /* BeerBottle.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 75CD496D290FDC57000AD7F7 /* BeerBottle.usdz */; };
 		75CD4970290FFEF0000AD7F7 /* BeerBottle2.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 75CD496F290FFEF0000AD7F7 /* BeerBottle2.usdz */; };
 		75CD497229100078000AD7F7 /* ColaTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 75CD497129100078000AD7F7 /* ColaTexture.png */; };
+		75E5D7A9291271410077DA36 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E5D7A8291271410077DA36 /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		75CD496D290FDC57000AD7F7 /* BeerBottle.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = BeerBottle.usdz; sourceTree = "<group>"; };
 		75CD496F290FFEF0000AD7F7 /* BeerBottle2.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = BeerBottle2.usdz; sourceTree = "<group>"; };
 		75CD497129100078000AD7F7 /* ColaTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ColaTexture.png; sourceTree = "<group>"; };
+		75E5D7A8291271410077DA36 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				75CD4965290FC5DA000AD7F7 /* RealityKitView.swift */,
+				75E5D7A8291271410077DA36 /* CustomButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				75CD4959290FC531000AD7F7 /* ContentView.swift in Sources */,
 				75CD4957290FC531000AD7F7 /* ARFunTimesApp.swift in Sources */,
 				75CD4966290FC5DA000AD7F7 /* RealityKitView.swift in Sources */,
+				75E5D7A9291271410077DA36 /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
