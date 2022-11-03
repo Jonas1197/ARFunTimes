@@ -18,16 +18,19 @@ struct CustomARConfiguration {
     var entityScale:            SIMD3<Float> = [0.1, 0.1, 0.1]
     
     static let dice = CustomARConfiguration(focusEntityEnabled: true,
-                                            focusEntityColor: .yellow,
                                             addsEntityOnTapEnabled: true,
                                             entityType: .dice,
                                             entityScale: [0.2, 0.2, 0.2])
     
     static let bottle = CustomARConfiguration(focusEntityEnabled: true,
-                                              focusEntityColor: .yellow,
                                               addsEntityOnTapEnabled: true,
                                               entityType: .beerBottle,
                                               entityScale: [0.01, 0.01, 0.01])
+    
+    static let wilhelm = CustomARConfiguration(focusEntityEnabled: true,
+                                              addsEntityOnTapEnabled: true,
+                                              entityType: .wilhelm,
+                                               entityScale: [0.7, 0.7, 0.7])
 }
 
 final class RealityKitViewStateModel: ObservableObject {
@@ -113,6 +116,7 @@ struct RealityKitView: UIViewRepresentable {
         enum EntityType: String {
             case dice       = "Dice"
             case beerBottle = "BeerBottle"
+            case wilhelm    = "Wilhelm"
         }
         
         weak var view: ARView?

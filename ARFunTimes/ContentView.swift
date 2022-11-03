@@ -25,10 +25,10 @@ struct ContentView: View {
                     Spacer()
                     
                     CustomButton(
-                        title: "Coca Cola",
+                        title: "Wilhelm",
                         color: .red,
-                        isSelected: realityKitViewModel.model.entityType == .beerBottle) {
-                            realityKitViewModel = .init(model: .bottle)
+                        isSelected: realityKitViewModel.model.entityType == .wilhelm) {
+                            realityKitViewModel = .init(model: .wilhelm)
                         }
                     
                     CustomButton(
