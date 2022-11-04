@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7510C4CF291511CA00D3339E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510C4CE291511CA00D3339E /* Models.swift */; };
+		7510C4D1291511FD00D3339E /* RealityKitViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510C4D0291511FD00D3339E /* RealityKitViewCoordinator.swift */; };
 		75CC4BB4291400820053F966 /* Wilhelm.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 75CC4BB3291400820053F966 /* Wilhelm.usdz */; };
 		75CC4BB6291400DA0053F966 /* WilhelmTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 75CC4BB5291400DA0053F966 /* WilhelmTexture.png */; };
 		75CD4957290FC531000AD7F7 /* ARFunTimesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD4956290FC531000AD7F7 /* ARFunTimesApp.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7510C4CE291511CA00D3339E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		7510C4D0291511FD00D3339E /* RealityKitViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealityKitViewCoordinator.swift; sourceTree = "<group>"; };
 		75CC4BB3291400820053F966 /* Wilhelm.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Wilhelm.usdz; sourceTree = "<group>"; };
 		75CC4BB5291400DA0053F966 /* WilhelmTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WilhelmTexture.png; sourceTree = "<group>"; };
 		75CD4953290FC531000AD7F7 /* ARFunTimes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARFunTimes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +54,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7510C4CD291511BF00D3339E /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				7510C4CE291511CA00D3339E /* Models.swift */,
+				7510C4D0291511FD00D3339E /* RealityKitViewCoordinator.swift */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
 		75CD494A290FC531000AD7F7 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +82,7 @@
 		75CD4955290FC531000AD7F7 /* ARFunTimes */ = {
 			isa = PBXGroup;
 			children = (
+				7510C4CD291511BF00D3339E /* DataModels */,
 				75CD496A290FD87C000AD7F7 /* Assets */,
 				75CD4964290FC590000AD7F7 /* Views */,
 				75CD4956290FC531000AD7F7 /* ARFunTimesApp.swift */,
@@ -194,7 +208,9 @@
 				75CD4959290FC531000AD7F7 /* ContentView.swift in Sources */,
 				75CD4957290FC531000AD7F7 /* ARFunTimesApp.swift in Sources */,
 				75CD4966290FC5DA000AD7F7 /* RealityKitView.swift in Sources */,
+				7510C4D1291511FD00D3339E /* RealityKitViewCoordinator.swift in Sources */,
 				75E5D7A9291271410077DA36 /* CustomButton.swift in Sources */,
+				7510C4CF291511CA00D3339E /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
