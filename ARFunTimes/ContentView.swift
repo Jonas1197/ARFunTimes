@@ -23,6 +23,7 @@ struct ContentView: View {
             VStack {
                 Spacer()
 
+                //MARK: Add Entity Button
                 CustomButton(symbol: "plus", color: .blue) {
                     realityKitViewModel = .init(model: realityKitViewModel.model, shouldAddEntity: true)
                 }
@@ -30,6 +31,8 @@ struct ContentView: View {
                 .padding(.bottom, 8)
 
                 HStack(spacing: 16) {
+                    
+                    //MARK: Wilhelm
                     CustomButton(
                         title: "Wilhelm",
                         color: .red,
@@ -37,6 +40,7 @@ struct ContentView: View {
                             realityKitViewModel = .init(model: .wilhelm)
                         }
 
+                    //MARK: Fus Ro Dah
                     CustomButton(
                         title: "FUS RO DAH",
                         color: .purple,
@@ -44,6 +48,7 @@ struct ContentView: View {
                             realityKitViewModel = .init(model: realityKitViewModel.model, fusRoDah: true)
                         }
 
+                    //MARK: Dice
                     CustomButton(
                         title: "Dice",
                         color: .gray,
@@ -54,44 +59,6 @@ struct ContentView: View {
                 .frame(maxHeight: 40)
             }
             .padding([.leading, .trailing])
-            
-//            HStack {
-//                VStack {
-//                    CustomButton(symbol: "plus", color: .blue) {
-//                        realityKitViewModel = .init(model: realityKitViewModel.model, shouldAddEntity: true)
-//                    }
-//
-//                    Spacer()
-//
-//                    CustomButton(
-//                        title: "Wilhelm",
-//                        color: .red,
-//                        isSelected: realityKitViewModel.model.entityType == .wilhelm) {
-//                            realityKitViewModel = .init(model: .wilhelm)
-//                        }
-//
-//                    CustomButton(
-//                        title: "Dice",
-//                        color: .gray,
-//                        isSelected: realityKitViewModel.model.entityType == .dice) {
-//                            realityKitViewModel = .init(model: .dice)
-//                        }
-//                }
-//                .padding([.leading, .bottom], 24)
-//
-//                Spacer()
-//                VStack {
-//                    Spacer()
-//
-//                    CustomButton(
-//                        title: "FUS RO DAH",
-//                        color: .purple,
-//                        isSelected: false) {
-//                            realityKitViewModel = .init(model: realityKitViewModel.model, fusRoDah: true)
-//                        }
-//                }
-//                .padding([.trailing, .bottom], 24)
-//            }
         }
     }
 }
