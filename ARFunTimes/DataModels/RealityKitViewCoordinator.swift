@@ -57,9 +57,6 @@ extension RealityKitView {
                 planeEntity.physicsBody = PhysicsBodyComponent(massProperties: .default, material: nil, mode: .static)
                 planeEntity.collision   = CollisionComponent(shapes: [.generateBox(width: 2, height: 0.001, depth: 100)])
                 
-                let position: SIMD3<Float> = [focusEntity.position.x, focusEntity.position.y - 0.1, focusEntity.position.z]
-                planeEntity.position       = position
-                
                 anchor.addChild(planeEntity)
             }
             
@@ -74,20 +71,30 @@ extension RealityKitView {
             entity.scale    = config.entityScale
             entity.position = focusEntity.position
             
-            
-            //MARK: Add physics to the object
-            let size     = entity.visualBounds(relativeTo: entity).extents
-            let boxShape = ShapeResource.generateBox(size: size)
-            entity.generateCollisionShapes(recursive: true)
-            let physics = PhysicsBodyComponent(massProperties: .init(shape: boxShape, mass: 5),
-                                               material:       .default,
-                                               mode:           .dynamic)
-            entity.components.set(physics)
-            
+            addPhysicsAndGestures(view, entity, physicsBody: false)
             
             //MARK: Add object to the world
             anchor.addChild(entity)
             self.entities.append(entity)
+        }
+        
+        /**
+         Enabled all gestures for the specific entitiy. Important to note, that should physicsBody == false then no translation or rotation gestures would be possible.
+         If physicsBody == false then colision will not work either (cuz there's not collision box...).
+         */
+        private func addPhysicsAndGestures(_ arView: ARView, _ entity: ModelEntity, physicsBody: Bool = false) {
+            entity.generateCollisionShapes(recursive: true)
+            
+            if physicsBody {
+                let size     = entity.visualBounds(relativeTo: entity).extents
+                let boxShape = ShapeResource.generateBox(size: size)
+                let physics  = PhysicsBodyComponent(massProperties: .init(shape: boxShape, mass: 5),
+                                                    material:       .default,
+                                                    mode:           .dynamic)
+                entity.components.set(physics)
+            }
+            
+            arView.installGestures(.all, for: entity)
         }
         
         /// It does what it says in the title.

@@ -22,16 +22,10 @@ struct RealityKitView: UIViewRepresentable {
     }
     
     func makeUIView(context: Context) -> ARView {
-       setUp(context)
-        
-//        MARK: Set debug options
-//        #if DEBUG
-//        view.debugOptions = [.showFeaturePoints, .showAnchorOrigins, .showAnchorGeometry]
-//        #endif
+        setUp(context)
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {
-        //MARK: Handle taps
         if stateModel.model.addsEntityOnTapEnabled {
             context.coordinator.customConfiguration = self.stateModel.model
             let tap = UITapGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.addEntity(_:)))
@@ -65,11 +59,12 @@ struct RealityKitView: UIViewRepresentable {
         configureCoordinator(context, arView: view, session: session)
         addTaps(context, view)
         
+//        view.debugOptions = [.showFeaturePoints, .showAnchorOrigins, .showAnchorGeometry]
+        
         return view
     }
     
     private func createArSession(_ arView: ARView) -> ARSession {
-        //MARK: Start AR Session
         let session           = arView.session
         let config            = ARWorldTrackingConfiguration()
         config.planeDetection = .horizontal
@@ -78,7 +73,6 @@ struct RealityKitView: UIViewRepresentable {
     }
     
     private func addCoachingOveraly(arView: ARView, session: ARSession) {
-        //MARK: Add coaching overlay
         let coachingOverlay              = ARCoachingOverlayView()
         coachingOverlay.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         coachingOverlay.session          = session
@@ -87,15 +81,13 @@ struct RealityKitView: UIViewRepresentable {
     }
     
     private func configureCoordinator(_ context: Context, arView: ARView, session: ARSession) {
-        //MARK: Handle AR Session events
+        // Handle AR Session events
         context.coordinator.view                = arView
         context.coordinator.customConfiguration = stateModel.model
         session.delegate                        = context.coordinator
     }
     
     private func addTaps(_ context: Context, _ arView: ARView) {
-        
-        //MARK: Handle taps
         if stateModel.model.addsEntityOnTapEnabled {
             let tap = UITapGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.addEntity(_:)))
             arView.addGestureRecognizer(tap)
