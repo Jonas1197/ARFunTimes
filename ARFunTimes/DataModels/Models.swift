@@ -16,27 +16,26 @@ struct CustomARConfiguration {
     var entityScale:            SIMD3<Float> = [0.1, 0.1, 0.1]
     
     static let dice = CustomARConfiguration(focusEntityEnabled: true,
-                                            addsEntityOnTapEnabled: true,
                                             entityType: .dice,
                                             entityScale: [0.2, 0.2, 0.2])
     
     static let bottle = CustomARConfiguration(focusEntityEnabled: true,
-                                              addsEntityOnTapEnabled: true,
                                               entityType: .beerBottle,
                                               entityScale: [0.01, 0.01, 0.01])
     
     static let wilhelm = CustomARConfiguration(focusEntityEnabled: true,
-                                              addsEntityOnTapEnabled: true,
                                               entityType: .wilhelm,
                                                entityScale: [0.7, 0.7, 0.7])
 }
 
 final class RealityKitViewStateModel: ObservableObject {
-    var model: CustomARConfiguration
-    var fusRoDah: Bool
+    var model:           CustomARConfiguration
+    var shouldAddEntity: Bool
+    var fusRoDah:        Bool
         
-    init(model: CustomARConfiguration, fusRoDah: Bool = false) {
-        self.model    = model
-        self.fusRoDah = fusRoDah
+    init(model: CustomARConfiguration, shouldAddEntity: Bool = false, fusRoDah: Bool = false) {
+        self.model           = model
+        self.fusRoDah        = fusRoDah
+        self.shouldAddEntity = shouldAddEntity
     }
 }

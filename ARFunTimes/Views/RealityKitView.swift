@@ -36,12 +36,19 @@ struct RealityKitView: UIViewRepresentable {
             context.coordinator.customConfiguration = self.stateModel.model
             let tap = UITapGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.addEntity(_:)))
             uiView.addGestureRecognizer(tap)
+            
         } else {
             uiView.gestureRecognizers?.forEach(uiView.removeGestureRecognizer(_:))
         }
         
         if stateModel.fusRoDah {
             context.coordinator.fusRoDahEverything()
+        }
+        
+        if stateModel.shouldAddEntity {
+            context.coordinator.customConfiguration = self.stateModel.model
+            context.coordinator.addEntity(.init())
+            stateModel.shouldAddEntity = false
         }
     }
     

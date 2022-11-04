@@ -70,7 +70,6 @@ extension RealityKitView {
                 return
             }
             
-            
             //MARK: Scaling and positioning
             entity.scale    = config.entityScale
             entity.position = focusEntity.position
