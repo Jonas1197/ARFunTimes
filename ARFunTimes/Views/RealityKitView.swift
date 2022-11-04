@@ -48,47 +48,18 @@ struct RealityKitView: UIViewRepresentable {
     var stateModel: RealityKitViewStateModel
     private var objects: [Entity] = []
     
+    //MARK: - Lifecycle
     init(stateModel: RealityKitViewStateModel) {
         self.stateModel = stateModel
     }
     
     func makeUIView(context: Context) -> ARView {
-        let view = ARView()
+       setUp(context)
         
-        //MARK: Start AR Session
-        let session           = view.session
-        let config            = ARWorldTrackingConfiguration()
-        config.planeDetection = .horizontal
-        session.run(config)
-        
-        
-        //MARK: Add coaching overlay
-        let coachingOverlay              = ARCoachingOverlayView()
-        coachingOverlay.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        coachingOverlay.session          = session
-        coachingOverlay.goal             = .horizontalPlane
-        view.addSubview(coachingOverlay)
-        
-        
-        //MARK: Set debug options
-        #if DEBUG
+//        MARK: Set debug options
+//        #if DEBUG
 //        view.debugOptions = [.showFeaturePoints, .showAnchorOrigins, .showAnchorGeometry]
-        #endif
-        
-        
-        //MARK: Handle AR Session events
-        context.coordinator.view                = view
-        context.coordinator.customConfiguration = stateModel.model
-        session.delegate                        = context.coordinator
-        
-        
-        //MARK: Handle taps
-        if stateModel.model.addsEntityOnTapEnabled {
-            let tap = UITapGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.addEntity(_:)))
-            view.addGestureRecognizer(tap)
-        }
-        
-        return view
+//        #endif
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {
@@ -108,6 +79,52 @@ struct RealityKitView: UIViewRepresentable {
     
     func makeCoordinator() -> Coordinator {
         Coordinator()
+    }
+    
+    
+    //MARK: - Setup
+    private func setUp(_ context: Context) -> ARView {
+        let view    = ARView()
+        let session = createArSession(view)
+        addCoachingOveraly(arView: view, session: session)
+        configureCoordinator(context, arView: view, session: session)
+        addTaps(context, view)
+        
+        return view
+    }
+    
+    private func createArSession(_ arView: ARView) -> ARSession {
+        //MARK: Start AR Session
+        let session           = arView.session
+        let config            = ARWorldTrackingConfiguration()
+        config.planeDetection = .horizontal
+        session.run(config)
+        return session
+    }
+    
+    private func addCoachingOveraly(arView: ARView, session: ARSession) {
+        //MARK: Add coaching overlay
+        let coachingOverlay              = ARCoachingOverlayView()
+        coachingOverlay.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        coachingOverlay.session          = session
+        coachingOverlay.goal             = .horizontalPlane
+        arView.addSubview(coachingOverlay)
+    }
+    
+    private func configureCoordinator(_ context: Context, arView: ARView, session: ARSession) {
+        //MARK: Handle AR Session events
+        context.coordinator.view                = arView
+        context.coordinator.customConfiguration = stateModel.model
+        session.delegate                        = context.coordinator
+    }
+    
+    private func addTaps(_ context: Context, _ arView: ARView) {
+        
+        //MARK: Handle taps
+        if stateModel.model.addsEntityOnTapEnabled {
+            let tap = UITapGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.addEntity(_:)))
+            arView.addGestureRecognizer(tap)
+        }
     }
     
     
